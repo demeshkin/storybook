@@ -72,6 +72,8 @@ describe('mapArgsToTypes', () => {
       a: false,
     });
     expect(mapArgsToTypes({ a: 'yes' }, { a: { type: booleanType } })).toStrictEqual({ a: false });
+    expect(mapArgsToTypes({ a: true }, { a: { type: booleanType } })).toStrictEqual({ a: true });
+    expect(mapArgsToTypes({ a: false }, { a: { type: booleanType } })).toStrictEqual({ a: false });
   });
 
   it('maps sparse arrays', () => {
